@@ -65,11 +65,11 @@ const roomSchema = new mongoose.Schema(
         review: { type: String, required: true },
       },
     ],
-    user: { type: mongoose.Schema.ObjectId, ref: 'User', required: true },
+    user: { type: mongoose.Schema.ObjectId, ref: 'User', required: false },
   },
   {
     timestamps: true,
   }
 )
 
-export default mongoose.model.Room || mongoose.model('Room', roomSchema)
+export default mongoose.models.Room || mongoose.model('Room', roomSchema)
